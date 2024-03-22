@@ -142,7 +142,7 @@ class Money implements Serializable, JsonSerializable
     /**
      * @return string
      */
-    public function jsonserialize()
+    public function jsonserialize(): mixed
     {
         return [
             'amount' => $this->amount,
