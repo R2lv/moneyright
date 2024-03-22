@@ -131,6 +131,14 @@ class Money implements Serializable, JsonSerializable
         $this->currency = unserialize($unserialized['currency']);
     }
 
+    public function __serialize() {
+        return $this->serialize();
+    }
+
+    public function __unserialize($serialized) {
+        $this->unserialize($serialized);
+    }
+
     /**
      * @return string
      */

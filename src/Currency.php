@@ -322,6 +322,14 @@ class Currency implements Serializable, JsonSerializable
         $this->fill($currentCurrency);
     }
 
+    public function __serialize() {
+        return $this->serialize();
+    }
+
+    public function __unserialize($serialized) {
+        $this->unserialize($serialized);
+    }
+
     /**
      * JSON Serialization getter for \JsonSerializable
      *
